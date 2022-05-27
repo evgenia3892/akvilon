@@ -1,1 +1,26 @@
-@import url('./normalize.scss');
+@import url("../fonts/golostext/golostext.css");
+@import url('./_normalize.scss');
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/*   colors   */
+
+$blue: #004AB3;
+$red: #E30016;
+$dark-text: #252525;
+
+/*  blocks, elements  */
+
+body {
+    font-family: 'Golos Text';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #000000;
+}
+
+
+/*  header  */
