@@ -16,6 +16,19 @@ $('.examples-works__slider').slick({
     nextArrow: '<svg width="28" height="24" class="slick-arrows slick-prev" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.0607 13.0607C27.6464 12.4749 27.6464 11.5251 27.0607 10.9393L17.5147 1.3934C16.9289 0.807611 15.9792 0.807611 15.3934 1.3934C14.8076 1.97919 14.8076 2.92893 15.3934 3.51472L23.8787 12L15.3934 20.4853C14.8076 21.0711 14.8076 22.0208 15.3934 22.6066C15.9792 23.1924 16.9289 23.1924 17.5147 22.6066L27.0607 13.0607ZM0 13.5H26V10.5H0V13.5Z" fill="#004AB3"/></svg>',
     centerMode: false,
     focusOnSelect: true,
+    responsive: [{
+        breakpoint: 1010,
+        settings: {
+            slidesToShow: 2,
+        }
+    }, {
+        breakpoint: 741,
+        settings: {
+            slidesToShow: 1,
+            arrows: false,
+            dots: true
+        }
+    }, ],
 });
 
 /*  tabs advantages */
@@ -39,4 +52,18 @@ $(window).scroll(function() {
     } else {
         $(".header__feedback").removeClass("fixed")
     }
+});
+/*  mobile nav  */
+$(".header__mobile-nav-btn").click(function() {
+    $(".header__mobile-nav-btn").toggleClass("header__mobile-nav-btn_active");
+    $(".header__mobile-nav").toggleClass("header__mobile-nav_active");
+})
+
+/*  FAQ */
+$(document).on('click', 'dt', function() {
+    let myDD = $(this).next('dd');
+    $(".questions__item dt").removeClass("active");
+    $(this).addClass("active");
+    $('dd').slideUp();
+    myDD.slideToggle();
 });
