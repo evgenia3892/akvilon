@@ -45,6 +45,29 @@ $('.our-advantages__tabs li').click(function() {
     $(activeTab).fadeIn();
     return false;
 });
+
+/*  tabs products */
+$(function() {
+    let tab = $('.products-tabs__wrapper .products-tabs__items > div');
+    tab.hide().filter(':first').show();
+
+    // Клики по вкладкам.
+    $('.products-tabs__wrapper .products-tabs__nav a').click(function() {
+        tab.hide();
+        tab.filter(this.hash).show();
+        $('.products-tabs__wrapper .products-tabs__nav a').removeClass('active');
+        $(this).addClass('active');
+        return false;
+    }).filter(':first').click();
+
+
+    if (window.location.hash) {
+        $('.products-tabs__nav a[href=' + window.location.hash + ']').click();
+        window.scrollTo(0, $("#".window.location.hash).offset().top);
+    }
+});
+
+
 /*  fixed feedback button */
 $(window).scroll(function() {
     if ($(this).scrollTop() > 110) {
