@@ -13,7 +13,7 @@
 <body>
     @@include('./html/header.html')
     <main>
-        <section class="bread-crumbs">
+        <div class="bread-crumbs">
             <div class="container">
                 <a href="index.html">
                     <svg width="12" height="13" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@
                 <a href="all-glass-partitions.html">Цельностеклянные перегородки</a>
                 <span>ALUTECH ALT111</span>
             </div>
-        </section>
+        </div>
 
         <section class="desc-product">
             <div class="container">
@@ -98,11 +98,11 @@
                             </svg>   
                         </dt>
                         <dd>
-                            <a href="https://окнахабаровск.рф/upload/iblock/e71/e718a27bf72bff43341e6c932b7ab521.pdf" target="_blunk" class="button-pdf-file">
+                            <a href="https://окнахабаровск.рф/upload/iblock/e71/e718a27bf72bff43341e6c932b7ab521.pdf" target="_blank" class="button-pdf-file">
                                 <img src="assets/img/icon-pdf.svg" alt="Иконка PDF формата">
                                 <p>Какое-то название</p>
                             </a>
-                            <a href="https://окнахабаровск.рф/upload/iblock/e71/e718a27bf72bff43341e6c932b7ab521.pdf" target="_blunk" class="button-pdf-file">
+                            <a href="https://окнахабаровск.рф/upload/iblock/e71/e718a27bf72bff43341e6c932b7ab521.pdf" target="_blank" class="button-pdf-file">
                                 <img src="assets/img/icon-pdf.svg" alt="Иконка PDF формата">
                                 <p>Какое-то название</p>
                             </a>
@@ -117,11 +117,11 @@
                             </svg>   
                     </dt>
                         <dd>
-                            <a href="https://окнахабаровск.рф/upload/iblock/e71/e718a27bf72bff43341e6c932b7ab521.pdf" target="_blunk" class="button-pdf-file">
+                            <a href="https://окнахабаровск.рф/upload/iblock/e71/e718a27bf72bff43341e6c932b7ab521.pdf" target="_blank" class="button-pdf-file">
                                 <img src="assets/img/icon-pdf.svg" alt="Иконка PDF формата">
                                 <p>Название сертификата</p>
                             </a>
-                            <a href="https://окнахабаровск.рф/upload/iblock/e71/e718a27bf72bff43341e6c932b7ab521.pdf" target="_blunk" class="button-pdf-file">
+                            <a href="https://окнахабаровск.рф/upload/iblock/e71/e718a27bf72bff43341e6c932b7ab521.pdf" target="_blank" class="button-pdf-file">
                                 <img src="assets/img/icon-pdf.svg" alt="Иконка PDF формата">
                                 <p>Название сертификата</p>
                             </a>
@@ -135,28 +135,26 @@
             <div class="container">
                 <h2>Наши <span>работы</span></h2>
                 <div class="examples-works__slider">
-                    <a href="assets/img/img-1-exam-glass.png">
+                    <div>
                         <img src="assets/img/img-1-exam-glass.png" alt="Фото объекта">
-                    </a>
-                    <a href="assets/img/img-2-exam-glass.png">
+                    </div>
+                    <div>
                         <img src="assets/img/img-2-exam-glass.png" alt="Фото объекта">
-                    </a>
-                    <a href="assets/img/img-3-exam-glass.png">
+                    </div>
+                    <div>
                         <img src="assets/img/img-3-exam-glass.png" alt="Фото объекта">
-                    </a>
-                    <a href="assets/img/img-2-reviews-section.png">
+                    </div>
+                    <div>
                         <img src="assets/img/img-2-reviews-section.png" alt="Фото объекта">
-                    </a>
+                    </div>
                 </div>
+            </div>
         </section>
 
         @@include('./html/feedback-form.html')
     </main>
     @@include('./html/footer.html')
 
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.4/js/lightgallery-all.min.js"></script>
 
     <script src="assets/js/script.min.js"></script>
 </body>

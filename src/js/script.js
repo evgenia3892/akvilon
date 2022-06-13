@@ -1,13 +1,10 @@
 import * as webP from "./modules/webp.js";
+import * as JQuery from "./modules/jquery-3.6.0.min.js";
 import * as slick from './modules/slick.min.js';
 
 webP.isWebP();
 
 /*  example works slider */
-$('.examples-works__slider').lightGallery({
-    thumbnail: false,
-    loop: true,
-});
 $('.examples-works__slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -46,23 +43,24 @@ $('.our-advantages__tabs li').click(function() {
     return false;
 });
 
-/*  tabs products */
+/*  tabs  */
 $(function() {
-    let tab = $('.products-tabs__wrapper .products-tabs__items > div');
+
+    let tab = $('.tabs .tabs__items > div');
     tab.hide().filter(':first').show();
 
     // Клики по вкладкам.
-    $('.products-tabs__wrapper .products-tabs__nav a').click(function() {
+    $('.tabs .tabs__nav a').click(function() {
         tab.hide();
         tab.filter(this.hash).show();
-        $('.products-tabs__wrapper .products-tabs__nav a').removeClass('active');
+        $('.tabs .tabs__nav a').removeClass('active');
         $(this).addClass('active');
         return false;
     }).filter(':first').click();
 
 
     if (window.location.hash) {
-        $('.products-tabs__nav a[href=' + window.location.hash + ']').click();
+        $('.tabs__nav a[href=' + window.location.hash + ']').click();
         window.scrollTo(0, $("#".window.location.hash).offset().top);
     }
 });
@@ -89,4 +87,72 @@ $(document).on('click', 'dt', function() {
     $(this).addClass("active");
     $('dd').slideUp();
     myDD.slideToggle();
+});
+
+/*   choose map   */
+
+$('.contacts__label').click(function() {
+    if ($('#choose-address').is(':checked')) {
+        $(".contacts__address-1").addClass("active");
+        $(".contacts__address-2").removeClass("active");
+    } else {
+        $(".contacts__address-2").addClass("active");
+        $(".contacts__address-1").removeClass("active");
+    }
+});
+
+/*  portfolio modal  */
+$('.tabs .portfolio__nav a').click(function() {
+    // let idActiveTabs = $(this).attr("href"),
+    //     parentSlider = document.querySelector(idActiveTabs),
+    //     sliderFor = parentSlider.querySelector(".portfolio__item__modal-slider-for"),
+    //     sliderNav = parentSlider.querySelector(".portfolio__item__modal-slider-nav");
+
+
+});
+
+$(".portfolio__item__modal-slider-for").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    asNavFor: '.portfolio__item__modal-slider-nav'
+});
+$(".portfolio__item__modal-slider-nav").slick({
+    slidesToShow: 13,
+    slidesToScroll: 1,
+    asNavFor: '.portfolio__item__modal-slider-for',
+    dots: false,
+    arrows: false,
+    centerMode: true,
+    focusOnSelect: true,
+    responsive: [{
+            breakpoint: 1010,
+            settings: {
+                slidesToShow: 11,
+            }
+        },
+        {
+            breakpoint: 740,
+            settings: {
+                slidesToShow: 7,
+            }
+        }, {
+            breakpoint: 375,
+            settings: {
+                slidesToShow: 5,
+            }
+        }
+    ]
+});
+
+$(".portfolio__item").click(function() {
+    let parentsModal = $(this).parents()[0];
+    let modal = parentsModal.querySelector(".portfolio__item__modal");
+    $(modal).fadeIn();
+    $('.portfolio__overflow-modal').fadeIn();
+    $('.portfolio__item__modal-slider-for, .portfolio__item__modal-slider-nav').slick('setPosition');
+});
+$(".portfolio__overflow-modal, .portfolio__close-modal").click(function() {
+    $(".portfolio__item__modal").fadeOut();
+    $('.portfolio__overflow-modal').fadeOut();
 });
