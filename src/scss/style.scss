@@ -552,6 +552,11 @@ body {
 
 .banner {
     height: 635px;
+    &_main {
+        .container {
+            background-position: center;
+        }
+    }
     .container {
         position: relative;
         display: flex;
